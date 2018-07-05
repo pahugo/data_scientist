@@ -34,7 +34,7 @@ def underscore
 end
 
 def order
-	puts @data.sort
+	puts @data.sort_by(&:downcase)
 end
 
 
