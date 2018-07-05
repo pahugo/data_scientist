@@ -5,13 +5,11 @@
 
 def transform
 	valuetri = []
+
 	myarray = @value.each do |val|
-	 val.delete! "$"
-	 valuetri << val.to_f
-
-end
-
-
+	  val.delete! "$"
+	  valuetri << val.to_f
+    end
 
 @data = Hash[@crypto.zip valuetri]
 
