@@ -80,9 +80,9 @@ def rate
 end
 
 def relargest
-	@data1 = @data.select {|k,v| v < 6000}
-	largest_crypto_c = @data1.select {|k,v| v == @data1.values.max}.keys 
-	largest_crypto_c_v = @data1.select {|k,v| v == @data1.values.max}.values
+	data1 = @data.select {|k,v| v < 6000}
+	largest_crypto_c = data1.select {|k,v| v == data1.values.max}.keys 
+	largest_crypto_c_v = data1.select {|k,v| v == data1.values.max}.values
 	puts "Le cours le plus haut inférieur à $6000 est $#{largest_crypto_c_v.join} ; il s'agit de la devise #{largest_crypto_c.join}"
 end
 
