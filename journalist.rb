@@ -12,7 +12,7 @@ def number
 end
 
 def aude
-	data1 = @data.map!(&:downcase)
+	data1 = @data.map(&:downcase)
 	aude = data1.count{|str| str.include?("aude")}
 	puts "Il y a #{aude} handles contenant aude"
 end
@@ -44,13 +44,13 @@ def user
 	choice = 0
 	while choice != 99
 
-		puts "Que veux tu faire ?"
+		puts "Que veux-tu faire ?"
 		puts "1 - Afficher le nombre de journalistes"
-		puts "2 - Afficher le nombre de handles avec un numéro"
-		puts "3 - Afficher le nombre de Aude"
+		puts "2 - Afficher le nombre de handles qui contiennent un numéro"
+		puts "3 - Afficher le nombre de handles qui contiennent aude"
 		puts "4 - Afficher le nombre de handles qui commencent par une majuscule"
 		puts "5 - Afficher le nombre de handles qui contiennent une majuscule"
-		puts "6 - Afficher le nombre de _"
+		puts "6 - Afficher le nombre total de _"
 		puts "7 - Trier la liste par ordre alphabétique"
 		puts "99 - Quitter"
 		print "> "

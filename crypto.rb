@@ -20,12 +20,12 @@ end
 def user_choice
 	choice = 0
 	while choice != 99
-		puts "Que veux-tu?"
-		puts "1 - Plus grosse valeur"
-		puts "2 - Plus petite valeur"
-		puts "3 - Combien contiennent le mot coin"
-		puts "4 - Afficher la liste de devises dont la valeur est inférieure à $6000"
-		puts "5 - Crypto qui a la plus grosse valeur parmi celles inférieures à $6000"
+		puts "Que veux-tu faire ?"
+		puts "1 - Afficher la crypto ayant plus grosse valeur"
+		puts "2 - Afficher la crypto ayant la plus petite valeur"
+		puts "3 - Afficher le nombre de cryptos contenant le mot coin"
+		puts "4 - Afficher la liste des devises dont la valeur est inférieure à $6000"
+		puts "5 - Afficher le cours le plus haut inférieur à $6000"
 		puts "99 - Quitter"
 	
 		print "> "
@@ -60,7 +60,7 @@ def largest
 	largest_crypto_k = @data.select {|k,v| v == @data.values.max}.keys
 	largest_crypto_v = @data.select {|k,v| v == @data.values.max}.values
 
-	puts "La cryptomonnaie ayant la plus grande valeur est #{largest_crypto_k.join(" ")} avec une valeur de $#{largest_crypto_v.join(" ")}"
+	puts "La cryptomonnaie ayant la plus grosse valeur est #{largest_crypto_k.join} avec une valeur de $#{largest_crypto_v.join}"
 end
 
 def smallest
@@ -81,8 +81,9 @@ end
 
 def relargest
 	@data1 = @data.select {|k,v| v < 6000}
-	largest_crypto_c = @data1.select {|k,v| v == @data1.values.max}.keys
-	puts "La cryptomonnaie ayant le cours le plus haut parmi ceux inférieurs à $6000 est #{largest_crypto_c.join(" ")}"
+	largest_crypto_c = @data1.select {|k,v| v == @data1.values.max}.keys 
+	largest_crypto_c_v = @data1.select {|k,v| v == @data1.values.max}.values
+	puts "Le cours le plus haut inférieur à $6000 est $#{largest_crypto_c_v.join} ; il s'agit de la devise #{largest_crypto_c.join}"
 end
 
 
