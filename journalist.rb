@@ -7,7 +7,7 @@ end
 
 
 def number
-	number = @data.select{|str| str.match(/[0-9]/)}.size
+	number = @data.count{|str| str.match(/[0-9]/)}
 	puts "Il y a #{number} handles qui contiennent un numéro"
 end
 
@@ -24,7 +24,7 @@ end
 
 
 def maj
-	maj = @data.select{|str| str.match(/[A-Z]/)}.size
+	maj = @data.count{|str| str.match(/[A-Z]/)}
 	puts "Il y a #{maj} handles qui contiennent une majuscule"
 end
 
