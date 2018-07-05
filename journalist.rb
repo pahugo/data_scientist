@@ -12,9 +12,8 @@ def number
 end
 
 def aude
-	data1 = @data.map(&:downcase)
-	aude = data1.count{|str| str.include?("aude")}
-	puts "Il y a #{aude} handles contenant aude"
+	aude = @data.count{|str| str.downcase.include?("aude")}
+	puts "Il y a #{aude} handles contenant 'aude'"
 end
 
 def majbegin
@@ -31,7 +30,7 @@ end
 def underscore
 	under = 0 
 	underscore = @data.select{|str| under+= str.count("_")}
-	puts "Il y a #{under} _"
+	puts "Il y a #{under} '_'"
 end
 
 def order

@@ -71,7 +71,9 @@ def smallest
 end
 
 def coin
-	puts "Il y a #{@data.select {|k| k.include?("coin") }.size} cryptomonnaies qui contiennent le mot coin"
+	coin = @data.select {|k| k.downcase.include?("coin") }.size
+	coinminus = @data.select {|k| k.include?("coin") }.size
+	puts "Il y a #{coin} cryptomonnaies qui contiennent le mot coin (dont #{coinminus} 'coin' écrit en minuscule)"
 end
 
 def rate
